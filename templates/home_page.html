@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- SECTION -->
+<div class="container">
+	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		</ol>
+		<!-- Wrapper for slides -->
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span aria-hidden="true"></span>
+			<span></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span aria-hidden="true"></span>
+			<span></span>
+		</a>
+	</div>
+</div>
+<!-- SECTION -->
+<div class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+
+			<!-- section title -->
+			<div class="col-md-12">
+				<div class="section-title">
+					<h3 class="title">Sản phầm mới</h3>
+				</div>
+			</div>
+			<!-- /section title -->
+
+			<!-- Products tab & slick -->
+			<div class="col-md-12">
+				<div class="row">
+					<div class="products-tabs">
+						<!-- tab -->
+						<div id="tab1" class="tab-pane active">
+							<div class="products-slick" data-nav="#slick-nav-1">
+								<!-- product -->
+								<!-- /product -->
+							</div>
+
+						</div>
+						<div id="slick-nav-1" class="products-slick-nav"></div>
+						<!-- /tab -->
+					</div>
+				</div>
+			</div>
+			<!-- Products tab & slick -->
+		</div>
+		<!-- /row -->
+	</div>
+</div>
+{% endblock %}

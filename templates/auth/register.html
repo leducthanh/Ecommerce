@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} Register {% endblock %}
+{% block content %}
+<div class="container text-center">
+    <div class="col-md-4 col-md-offset-4">
+        <form method="post" action="">
+            <div class="billing-details">
+                <div class="section-title">
+                    <h3 class="title">Đăng kí thành viên</h3>
+                </div>
+                {{ form }}
+				<!-- <div class="form-group form-check">
+					<input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember" value="1">
+					<label class="form-check-label" for="exampleCheck1">Remember</label>
+				</div> -->
+            </div>
+            <button class="btn btn-primary" type="submit" style="margin-bottom: 30px">Đăng ký</button>
+            {% csrf_token %}
+        </form>
+    </div>
+</div>
+{% endblock %}

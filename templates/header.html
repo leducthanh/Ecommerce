@@ -1,0 +1,78 @@
+{% load static %}
+<div id="top-header">
+    <div class="container">
+        <ul class="header-links pull-left">
+            <li><a href="#"><i class="fa fa-phone"></i> +84353123453</a></li>
+            <li><a href="#"><i class="fa fa-envelope-o"></i> ducthanh2402@gmail.com</a></li>
+            <li><a href="#"><i class="fa fa-map-marker"></i> 138/58/53 Tân Triều</a></li>
+        </ul>
+        <ul class="header-links pull-right">
+            <!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
+            {% if user.is_authenticated %}
+            <li>
+                <div class="btn-group">
+                    <button class="black" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Chào: {{ user.username|title }}
+                    </button>
+                    <ul class="dropdown-menu" style="background: #1E1F29">
+                        <li class="black"><a href=""><i class="fa fa-user"></i>&nbsp&nbspThông tin tài khoản</a></li>
+                        <li class="black"><a href=""><i class="fa fa-align-left"></i>&nbsp&nbspĐịa chỉ giao hàng</a></li>
+                        <li class="black"><a href=""><i class="fa fa-key"></i>&nbsp&nbspĐổi mật khẩu</a></li>
+                        <li class="black"><a href=""><i class="fa fa-history"></i>&nbsp&nbspLịch sử mua hàng</a></li>
+                    </ul>
+                </div>
+                &nbsp&nbsp<img src="{% static 'ecommerce/image/1.png' %}" class="img-circle" alt="avata" width="25" height="25">
+                <strong> / </strong>
+                <a href="{% url 'logout' %}">Đăng xuất</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'login' %}"><i class="fa fa-user-o"></i>Đăng nhập</a>
+                <strong> / </strong>
+                <a href="{% url 'register' %}">Đăng kí</a>
+            </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<!-- /TOP HEADER -->
+
+<!-- MAIN HEADER -->
+
+<div id="header">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- LOGO -->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-md-offset-1 col-lg-offset-1">
+                <div class="header-logo">
+                    <a href="{% url 'home' %}">
+                        <img style=" width: auto; height: 70px; " src="{% static 'ecommerce/image/logo.ico' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <!-- /LOGO -->
+
+            <!-- SEARCH BAR -->
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 ">
+                <div class="header-search text-center">
+                    <form action="{% url 'search:search' %}" accept-charset="utf-8" enctype="multipart/form-data">
+                        <div class="row">
+                            <input class="input-select" placeholder="Nhập từ khóa" name="q" value="{{ request.GET.q }}">
+                            <button class="search-btn" type="supmit">Tím kiếm</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /SEARCH BAR -->
+
+            <!-- ACCOUNT -->
+                {% include 'minicart.html' %}
+            <!-- /ACCOUNT -->
+        </div>
+        <!-- row -->
+    </div>
+    <!-- container -->
+</div>
+<!-- /MAIN HEADER -->

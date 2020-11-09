@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} Products {% endblock %}
+{% block content %}
+<div class="container">
+	<!-- Products tab & slick -->
+	<div class="col-md-12">
+		<div class="row">
+			<div class="products-tabs">
+				<!-- tab -->
+				<div id="tab1" class="tab-pane active">
+					<div class="products-slick" data-nav="#slick-nav-1">
+						<!-- product -->
+						{% for obj in object_list %}
+							{% include 'product/snippets/card_product.html' %}
+						{% endfor %}
+					</div>
+
+				</div>
+				<div id="slick-nav-1" class="products-slick-nav"></div>
+				<!-- /tab -->
+			</div>
+		</div>
+	</div>
+	<!-- Products tab & slick -->
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<title>LT shop |{% block title %}{% endblock %}</title>
+<head>
+    {% include 'head.html' %}
+</head>
+<body>
+	<div id="container">
+		<div id="content">
+			<!-- HEADER -->
+			<header>
+                {% include 'header.html' %}
+			</header>
+			<!-- /HEADER -->
+
+			<!-- NAVIGATION -->
+			<nav id="navigation">
+                {% include 'navigation.html' %}
+			</nav>
+			<!-- /NAVIGATION -->
+
+            <!-- Content -->
+			<div>
+                {% block content %}
+                {% endblock %}
+			</div>
+			<!-- /Content -->
+
+			<!-- FOOTER -->
+			<div>
+                {% include 'footer.html' %}
+			</div>
+            <!-- /FOOTER -->
+		</div>
+		<a href="#" class="cd-top">Back To Top</a>
+		<!-- js Plugins -->
+        {% include 'js.html' %}
+        {% block script %}
+        {% endblock %}
+	</div>
+</body>
+</html>

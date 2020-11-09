@@ -1,0 +1,49 @@
+{% load static %}
+<div id="menu-cart">
+	<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 clearfix" id="cart-fly">
+
+		<div class="header-ctn" id="cart-fly-icon">
+			<div class="dropdown menu_cart">
+				<a href="{% url 'cart:cart' %}">
+					<i class="fa fa-shopping-cart"></i>
+					<span>Giỏ hàng</span>
+					<div class="qty">
+						{% if request.session.cart_items %}
+							{{request.session.cart_items}}
+						{% else %}
+							0
+						{% endif %}
+					</div>
+				</a>
+				<div class="cart-dropdown">
+					<div class="cart-list">
+						<div class="product-widget">
+							<div class="product-img">
+								<img src="{% static 'ecommerce/image/icon.ico' %}" alt="">
+							</div>
+							<div class="product-body">
+								<h3 class="product-name" style="margin-bottom:3px;"><a href=""></a></h3>
+								<p style="margin: 0 0 0px; font-size: 10px;">Size:
+									/ Số Lượng:</p>
+								<p style="margin: 0 0 0px; font-size: 10px;">
+									Giá:
+								</p>
+							</div>
+							<a class="dele-cart-top" href=""><i class="delete fa fa-close"></i></a>
+						</div>
+						<h4 class="text-center">Chưa có sản phẩm nào.</h4>
+					</div>
+					<div class="cart-summary">
+						<small>Có sản phẩm.</small>
+						<h5>Tổng tiền: </h5>
+					</div>
+					<div class="cart-btns">
+						<a href="{% url 'cart:cart' %}">Xem giỏ hàng</a>
+						<a href="{% url 'cart:checkout' %}">Đặt hàng<i class="fa fa-arrow-circle-right"></i></a>
+					</div>
+				</div>
+			</div>
+			<!-- /Cart -->
+		</div>
+	</div>
+</div>

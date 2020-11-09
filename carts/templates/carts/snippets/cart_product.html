@@ -1,0 +1,33 @@
+<tr>
+	<td>
+		<a href="{{ product.get_absolute_url }}">
+		<img src="{{product.image.url}}">
+		<b>{{product.title}}</b>
+		</a>
+	</td>
+	<td>
+		<p style="height: 40px; padding-top: 25px"> <b style="color:red">{{product.price}} $</b></p>
+	</td>
+	<td>
+		<input id="" class="text-center qty uintTextBox cart-amount" value="1" min="1" style="margin-top:15px;" >
+	</td>
+	<!-- <td style="width: 10%;" class="text-center">
+		<select id="" class="input-select size" style="width: 90px; text-align: center;" required>
+			<option value="" </option>
+			<option selected>Chọn</option>
+		</select>
+	</td> -->
+	<td>
+		<p style="height: 40px; padding-top: 25px">{{product.price}}</p>
+	</td>
+	<td>
+		<form class="" action="{% url 'cart:update' %}" method="post">
+		<input type="hidden" name="product_id" value="{{product.id}}">
+		<p style="height: 40px; margin-top:20px;">
+			<button class="btn btn-danger btn-sm" type="submit" name="button">Xóa</button>
+				<!-- <a href="" class="dele-cart"><input type="button" class="btn btn-danger btn-sm " value="Xóa" style="font-weight: bold;"></a>&nbsp&nbsp -->
+		        {% csrf_token %}
+		</p>
+		</form>
+	</td>
+</tr>

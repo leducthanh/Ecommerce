@@ -1,0 +1,36 @@
+.cart-table{
+	margin-bottom: 0px !important;
+}
+.cart-table>thead>tr>th {
+	border-top: 0px solid #ddd !important;
+	padding-bottom: 25px !important;
+	padding-top: 20px !important;
+}
+.cart-table tbody .tr-bottom td {
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+	text-align: center;
+}
+td{
+	text-align: center;
+}
+.cart-amount{
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border-color: #D10024;
+}
+.cart-table tbody tr td img{
+	max-width: 80px;
+	max-height: 80px;
+	width: auto;
+	margin-right: 10px;
+	margin-left: 10px
+}
+.panel-cart{
+	margin-top: 30px
+}
+.panel-cart .panel-heading .panel-title{
+	margin: 10px 15px 10px 15px;
+	font-size: 20px;
+}
