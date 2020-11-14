@@ -28,6 +28,7 @@ urlpatterns = [
     path('logout/',logout_page, name='logout'),
     path('register/', register_page, name='register'),
     path('admin/', admin.site.urls, name='admin'),
+    path('api/', include('api.urls',namespace='api')),
     path('products/', include('products.urls',namespace='produts')),
     path('search/', include('search.urls',namespace='search')),
     path('cart/', include('carts.urls',namespace='cart')),

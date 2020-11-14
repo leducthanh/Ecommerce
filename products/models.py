@@ -45,12 +45,14 @@ class ProductManager(models.Manager):
 class Product(models.Model):
     title           = models.CharField(max_length = 100)
     slug            = models.SlugField(blank = True, null = True)
+    sort_description= models.TextField(max_length = 255, blank = True, null = True)
     description     = models.TextField()
     price           = models.DecimalField(default=0, max_digits=6, decimal_places=1)
     image           = models.ImageField(upload_to = "products/",blank = True, null = True)
     featured        = models.BooleanField(default=False)
     active          = models.BooleanField(default = True)
     created_at      = models.DateTimeField(auto_now_add = True)
+    updated_at      = models.DateTimeField(auto_now = True)
 
     objects = ProductManager()
 
@@ -65,6 +67,5 @@ class Product(models.Model):
 def product_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
-    instance.cart.all
 
 pre_save.connect(product_pre_save_receiver, sender=Product)
